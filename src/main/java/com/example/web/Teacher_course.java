@@ -13,7 +13,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @AllArgsConstructor
 
-public class Teachers_courses implements CommonEntity<Long> {
+public class Teacher_course implements CommonEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,13 +24,13 @@ public class Teachers_courses implements CommonEntity<Long> {
     @JoinColumn(name = "teacher_id")
     @ToString.Exclude
     @NonNull
-    private Teachers teacher_id;
+    private Teacher teacher_id;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id")
     @ToString.Exclude
     @NonNull
-    private Courses course_id;
+    private Course course_id;
 
     @Column(nullable = false, name = "year_of_course")
     @NonNull
@@ -40,7 +40,7 @@ public class Teachers_courses implements CommonEntity<Long> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Teachers_courses other = (Teachers_courses) o;
+        Teacher_course other = (Teacher_course) o;
         return Objects.equals(id, other.id)
                 && teacher_id.equals(other.teacher_id)
                 && course_id.equals(other.course_id)

@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Auditoriums")
+@Table(name = "Teachers")
 @Getter
 @Setter
 @ToString
@@ -13,28 +13,23 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @AllArgsConstructor
 
-public class Auditoriums implements CommonEntity<Long> {
+public class Teacher implements CommonEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, name = "auditorium_id")
+    @Column(nullable = false, name = "teacher_id")
     private Long id;
 
-    @Column(nullable = false, name = "aud_number")
+    @Column(nullable = false, name = "full_name")
     @NonNull
-    private Long number;
-
-    @Column(name = "capacity")
-    @NonNull
-    private Long capacity;
+    private String full_name;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Auditoriums other = (Auditoriums) o;
+        Teacher other = (Teacher) o;
         return Objects.equals(id, other.id)
-                && number.equals(other.number)
-                && capacity.equals(other.capacity);
+                && full_name.equals(other.full_name);
     }
 }

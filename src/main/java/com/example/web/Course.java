@@ -13,7 +13,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @AllArgsConstructor
 
-public class Courses implements CommonEntity<Long> {
+public class Course implements CommonEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +40,7 @@ public class Courses implements CommonEntity<Long> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Courses other = (Courses) o;
+        Course other = (Course) o;
         return Objects.equals(id, other.id)
                 && name.equals(other.name)
                 && coverage.equals(other.coverage)

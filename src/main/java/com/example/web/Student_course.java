@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Students")
+@Table(name = "Students_courses")
 @Getter
 @Setter
 @ToString
@@ -13,35 +13,32 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @AllArgsConstructor
 
-public class Students implements CommonEntity<Long> {
+public class Student_course implements CommonEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, name = "student_id")
+    @Column(nullable = false, name = "id")
     private Long id;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "group_id")
+    @JoinColumn(name = "student_id")
     @ToString.Exclude
     @NonNull
-    private Stream_group group_id;
+    private Student student_id;
 
-    @Column(nullable = false, name = "full_name")
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "course_id")
+    @ToString.Exclude
     @NonNull
-    private String full_name;
-
-    @Column(nullable = false, name = "year")
-    @NonNull
-    private Long year;
+    private Course course_id;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Students other = (Students) o;
+        Student_course other = (Student_course) o;
         return Objects.equals(id, other.id)
-                && group_id.equals(other.group_id)
-                && full_name.equals(other.full_name)
-                && year.equals(other.year);
+                && student_id.equals(other.student_id)
+                && course_id.equals(other.course_id);
     }
 }

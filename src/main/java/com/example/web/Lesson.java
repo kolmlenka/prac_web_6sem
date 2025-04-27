@@ -14,7 +14,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 @AllArgsConstructor
 
-public class Lessons implements CommonEntity<Long> {
+public class Lesson implements CommonEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,19 +25,19 @@ public class Lessons implements CommonEntity<Long> {
     @JoinColumn(name = "teacher_id")
     @ToString.Exclude
     @NonNull
-    private Set<Teachers> teachers;
+    private Set<Teacher> teachers;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id")
     @ToString.Exclude
     @NonNull
-    private Set<Courses> courses;
+    private Set<Course> courses;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "auditorium_id")
     @ToString.Exclude
     @NonNull
-    private Set<Auditoriums> auditoriums;
+    private Set<Auditorium> auditoriums;
 
     @Column(nullable = false, name = "time")
     @NonNull
@@ -47,7 +47,7 @@ public class Lessons implements CommonEntity<Long> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Lessons other = (Lessons) o;
+        Lesson other = (Lesson) o;
         return Objects.equals(id, other.id)
                 && teachers.equals(other.teachers)
                 && courses.equals(other.courses)
