@@ -30,7 +30,7 @@ public class Student implements CommonEntity<Long> {
     @NonNull
     private String full_name;
 
-    @Column(nullable = false, name = "year")
+    @Column(nullable = false, name = "stud_year")
     @NonNull
     private Long year;
 
