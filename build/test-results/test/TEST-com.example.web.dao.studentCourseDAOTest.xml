@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.web.dao.studentCourseDAOTest" tests="3" skipped="0" failures="3" errors="0" timestamp="2025-05-08T22:11:14.656Z" hostname="kolmlena-NBLK-WAX9X" time="0.751">
+  <properties/>
+  <testcase name="testFindByNonExistentTeacher_Id()" classname="com.example.web.dao.studentCourseDAOTest" time="0.723">
+    <failure message="org.springframework.dao.InvalidDataAccessApiUsageException: Argument [999] of type [java.lang.Long] did not match parameter type [com.example.web.Student (n/a)]" type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: Argument [999] of type [java.lang.Long] did not match parameter type [com.example.web.Student (n/a)]
+	at app//org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:371)
+	at app//org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:246)
+	at app//org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:560)
+	at app//org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at app//org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:343)
+	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:160)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy131.findByStudent_id(Unknown Source)
+	at app//com.example.web.dao.StudentCourseDAO.getCoursesByStudentId(StudentCourseDAO.java:20)
+	at app//com.example.web.dao.studentCourseDAOTest.testFindByNonExistentTeacher_Id(studentCourseDAOTest.java:37)
+	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.6/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.6/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.hibernate.query.QueryArgumentException: Argument [999] of type [java.lang.Long] did not match parameter type [com.example.web.Student (n/a)]
+	at app//org.hibernate.query.spi.QueryParameterBindingValidator.validate(QueryParameterBindingValidator.java:85)
+	at app//org.hibernate.query.spi.QueryParameterBindingValidator.validate(QueryParameterBindingValidator.java:32)
+	at app//org.hibernate.query.internal.QueryParameterBindingImpl.validate(QueryParameterBindingImpl.java:366)
+	at app//org.hibernate.query.internal.QueryParameterBindingImpl.setBindValue(QueryParameterBindingImpl.java:142)
+	at app//org.hibernate.query.spi.AbstractCommonQueryContract.setParameter(AbstractCommonQueryContract.java:835)
+	at app//org.hibernate.query.spi.AbstractSelectionQuery.setParameter(AbstractSelectionQuery.java:602)
+	at app//org.hibernate.query.sqm.internal.QuerySqmImpl.setParameter(QuerySqmImpl.java:1061)
+	at app//org.hibernate.query.sqm.internal.QuerySqmImpl.setParameter(QuerySqmImpl.java:125)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$BindableQuery.setParameter(QueryParameterSetter.java:326)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$NamedOrIndexedQueryParameterSetter.lambda$4(QueryParameterSetter.java:117)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$ErrorHandling$1.execute(QueryParameterSetter.java:140)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$NamedOrIndexedQueryParameterSetter.setParameter(QueryParameterSetter.java:117)
+	at app//org.springframework.data.jpa.repository.query.ParameterBinder.bind(ParameterBinder.java:86)
+	at app//org.springframework.data.jpa.repository.query.ParameterBinder.bind(ParameterBinder.java:78)
+	at app//org.springframework.data.jpa.repository.query.ParameterBinder.bindAndPrepare(ParameterBinder.java:100)
+	at app//org.springframework.data.jpa.repository.query.AbstractStringBasedJpaQuery.doCreateQuery(AbstractStringBasedJpaQuery.java:128)
+	at app//org.springframework.data.jpa.repository.query.AbstractJpaQuery.createQuery(AbstractJpaQuery.java:243)
+	at app//org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:130)
+	at app//org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:93)
+	at app//org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:152)
+	at app//org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:140)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:170)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at app//org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	... 10 more
+</failure>
+  </testcase>
+  <testcase name="testDeleteStudentCourseRelation()" classname="com.example.web.dao.studentCourseDAOTest" time="0.014">
+    <failure message="org.springframework.dao.InvalidDataAccessApiUsageException: Argument [1] of type [java.lang.Long] did not match parameter type [com.example.web.Student (n/a)]" type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: Argument [1] of type [java.lang.Long] did not match parameter type [com.example.web.Student (n/a)]
+	at app//org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:371)
+	at app//org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:246)
+	at app//org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:560)
+	at app//org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at app//org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:343)
+	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:160)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy131.deleteRelation(Unknown Source)
+	at app//com.example.web.dao.StudentCourseDAO.deleteStudentCourseRelation(StudentCourseDAO.java:24)
+	at app//com.example.web.dao.studentCourseDAOTest.testDeleteStudentCourseRelation(studentCourseDAOTest.java:46)
+	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.6/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.6/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.hibernate.query.QueryArgumentException: Argument [1] of type [java.lang.Long] did not match parameter type [com.example.web.Student (n/a)]
+	at app//org.hibernate.query.spi.QueryParameterBindingValidator.validate(QueryParameterBindingValidator.java:85)
+	at app//org.hibernate.query.spi.QueryParameterBindingValidator.validate(QueryParameterBindingValidator.java:32)
+	at app//org.hibernate.query.internal.QueryParameterBindingImpl.validate(QueryParameterBindingImpl.java:366)
+	at app//org.hibernate.query.internal.QueryParameterBindingImpl.setBindValue(QueryParameterBindingImpl.java:142)
+	at app//org.hibernate.query.spi.AbstractCommonQueryContract.setParameter(AbstractCommonQueryContract.java:835)
+	at app//org.hibernate.query.spi.AbstractSelectionQuery.setParameter(AbstractSelectionQuery.java:602)
+	at app//org.hibernate.query.sqm.internal.QuerySqmImpl.setParameter(QuerySqmImpl.java:1061)
+	at app//org.hibernate.query.sqm.internal.QuerySqmImpl.setParameter(QuerySqmImpl.java:125)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$BindableQuery.setParameter(QueryParameterSetter.java:326)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$NamedOrIndexedQueryParameterSetter.lambda$4(QueryParameterSetter.java:117)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$ErrorHandling$1.execute(QueryParameterSetter.java:140)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$NamedOrIndexedQueryParameterSetter.setParameter(QueryParameterSetter.java:117)
+	at app//org.springframework.data.jpa.repository.query.ParameterBinder.bind(ParameterBinder.java:86)
+	at app//org.springframework.data.jpa.repository.query.ParameterBinder.bind(ParameterBinder.java:78)
+	at app//org.springframework.data.jpa.repository.query.ParameterBinder.bindAndPrepare(ParameterBinder.java:100)
+	at app//org.springframework.data.jpa.repository.query.AbstractStringBasedJpaQuery.doCreateQuery(AbstractStringBasedJpaQuery.java:128)
+	at app//org.springframework.data.jpa.repository.query.AbstractJpaQuery.createQuery(AbstractJpaQuery.java:243)
+	at app//org.springframework.data.jpa.repository.query.JpaQueryExecution$ModifyingExecution.doExecute(JpaQueryExecution.java:267)
+	at app//org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:93)
+	at app//org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:152)
+	at app//org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:140)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:170)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at app//org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	... 10 more
+</failure>
+  </testcase>
+  <testcase name="testFindByStudent_Id()" classname="com.example.web.dao.studentCourseDAOTest" time="0.01">
+    <failure message="org.springframework.dao.InvalidDataAccessApiUsageException: Argument [1] of type [java.lang.Long] did not match parameter type [com.example.web.Student (n/a)]" type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: Argument [1] of type [java.lang.Long] did not match parameter type [com.example.web.Student (n/a)]
+	at app//org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:371)
+	at app//org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:246)
+	at app//org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:560)
+	at app//org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at app//org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:343)
+	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:160)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy131.findByStudent_id(Unknown Source)
+	at app//com.example.web.dao.StudentCourseDAO.getCoursesByStudentId(StudentCourseDAO.java:20)
+	at app//com.example.web.dao.studentCourseDAOTest.testFindByStudent_Id(studentCourseDAOTest.java:28)
+	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.6/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.6/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.hibernate.query.QueryArgumentException: Argument [1] of type [java.lang.Long] did not match parameter type [com.example.web.Student (n/a)]
+	at app//org.hibernate.query.spi.QueryParameterBindingValidator.validate(QueryParameterBindingValidator.java:85)
+	at app//org.hibernate.query.spi.QueryParameterBindingValidator.validate(QueryParameterBindingValidator.java:32)
+	at app//org.hibernate.query.internal.QueryParameterBindingImpl.validate(QueryParameterBindingImpl.java:366)
+	at app//org.hibernate.query.internal.QueryParameterBindingImpl.setBindValue(QueryParameterBindingImpl.java:142)
+	at app//org.hibernate.query.spi.AbstractCommonQueryContract.setParameter(AbstractCommonQueryContract.java:835)
+	at app//org.hibernate.query.spi.AbstractSelectionQuery.setParameter(AbstractSelectionQuery.java:602)
+	at app//org.hibernate.query.sqm.internal.QuerySqmImpl.setParameter(QuerySqmImpl.java:1061)
+	at app//org.hibernate.query.sqm.internal.QuerySqmImpl.setParameter(QuerySqmImpl.java:125)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$BindableQuery.setParameter(QueryParameterSetter.java:326)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$NamedOrIndexedQueryParameterSetter.lambda$4(QueryParameterSetter.java:117)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$ErrorHandling$1.execute(QueryParameterSetter.java:140)
+	at app//org.springframework.data.jpa.repository.query.QueryParameterSetter$NamedOrIndexedQueryParameterSetter.setParameter(QueryParameterSetter.java:117)
+	at app//org.springframework.data.jpa.repository.query.ParameterBinder.bind(ParameterBinder.java:86)
+	at app//org.springframework.data.jpa.repository.query.ParameterBinder.bind(ParameterBinder.java:78)
+	at app//org.springframework.data.jpa.repository.query.ParameterBinder.bindAndPrepare(ParameterBinder.java:100)
+	at app//org.springframework.data.jpa.repository.query.AbstractStringBasedJpaQuery.doCreateQuery(AbstractStringBasedJpaQuery.java:128)
+	at app//org.springframework.data.jpa.repository.query.AbstractJpaQuery.createQuery(AbstractJpaQuery.java:243)
+	at app//org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:130)
+	at app//org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:93)
+	at app//org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:152)
+	at app//org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:140)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:170)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at app//org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	... 10 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[01:11:08.062 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.web.dao.studentCourseDAOTest]: studentCourseDAOTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:11:08.211 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.web.WebApplication for test class com.example.web.dao.studentCourseDAOTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.4)
+
+2025-05-09T01:11:08.770+03:00  INFO 77647 --- [web] [    Test worker] c.example.web.dao.studentCourseDAOTest   : Starting studentCourseDAOTest using Java 21.0.6 with PID 77647 (started by kolmlena in /home/kolmlena/IdeaProjects/web)
+2025-05-09T01:11:08.772+03:00  INFO 77647 --- [web] [    Test worker] c.example.web.dao.studentCourseDAOTest   : No active profile set, falling back to 1 default profile: "default"
+2025-05-09T01:11:09.572+03:00  INFO 77647 --- [web] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T01:11:09.653+03:00  INFO 77647 --- [web] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 4 JPA repository interfaces.
+2025-05-09T01:11:10.220+03:00  INFO 77647 --- [web] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T01:11:10.284+03:00  INFO 77647 --- [web] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-09T01:11:10.326+03:00  INFO 77647 --- [web] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T01:11:10.717+03:00  INFO 77647 --- [web] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T01:11:10.756+03:00  INFO 77647 --- [web] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T01:11:11.275+03:00  INFO 77647 --- [web] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c8e8fed
+2025-05-09T01:11:11.277+03:00  INFO 77647 --- [web] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T01:11:11.326+03:00  WARN 77647 --- [web] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-09T01:11:11.353+03:00  INFO 77647 --- [web] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 14.17
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-09T01:11:12.709+03:00  INFO 77647 --- [web] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T01:11:12.714+03:00  INFO 77647 --- [web] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T01:11:13.023+03:00  INFO 77647 --- [web] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-09T01:11:13.863+03:00  WARN 77647 --- [web] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T01:11:14.412+03:00  INFO 77647 --- [web] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-09T01:11:14.638+03:00  INFO 77647 --- [web] [    Test worker] c.example.web.dao.studentCourseDAOTest   : Started studentCourseDAOTest in 6.215 seconds (process running for 7.699)
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/home/kolmlena/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.11/a38b16385e867f59a641330f0362ebe742788ed8/byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

@@ -16,5 +16,5 @@ public interface StudentCourseRepository extends JpaRepository<Student_course, L
 
     @Modifying
     @Query("DELETE FROM Student_course sc WHERE sc.student_id = :studentId")
-    void deleteRelation(Long studentId);
+    int deleteRelation(Long studentId);
 }

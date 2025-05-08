@@ -20,11 +20,9 @@ public class StudentCourseDAO {
         return studentCourseRepository.findByStudent_id(studentId);
     }
 
-    public Student_course save(Student_course course) {
-        return studentCourseRepository.save(course);
+    public boolean deleteStudentCourseRelation(Long studentId) {
+        int deletedCount = studentCourseRepository.deleteRelation(studentId);
+        return deletedCount > 0;
     }
 
-    public void deleteStudentCourseRelation(Long studentId){
-        studentCourseRepository.deleteRelation(studentId);
-    }
 }
