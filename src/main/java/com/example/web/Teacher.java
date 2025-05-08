@@ -32,4 +32,20 @@ public class Teacher implements CommonEntity<Long> {
         return Objects.equals(id, other.id)
                 && full_name.equals(other.full_name);
     }
+
+    public @NonNull String getFull_name() {
+        return full_name;
+    }
+
+    public void setFull_name(@NonNull String full_name) {
+        this.full_name = full_name;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id=" + id +
+                ", full_name='" + full_name + '\'' +
+                '}';
+    }
 }

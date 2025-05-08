@@ -44,4 +44,38 @@ public class Student implements CommonEntity<Long> {
                 && full_name.equals(other.full_name)
                 && year.equals(other.year);
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", group_id=" + group_id +
+                ", full_name='" + full_name + '\'' +
+                ", year=" + year +
+                '}';
+    }
+
+    public @NonNull Stream_group getGroup_id() {
+        return group_id;
+    }
+
+    public void setGroup_id(@NonNull Stream_group group_id) {
+        this.group_id = group_id;
+    }
+
+    public @NonNull String getFull_name() {
+        return full_name;
+    }
+
+    public void setFull_name(@NonNull String full_name) {
+        this.full_name = full_name;
+    }
+
+    public @NonNull Long getYear() {
+        return year;
+    }
+
+    public void setYear(@NonNull Long year) {
+        this.year = year;
+    }
 }

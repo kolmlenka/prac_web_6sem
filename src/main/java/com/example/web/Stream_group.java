@@ -32,4 +32,20 @@ public class Stream_group implements CommonEntity<Long> {
         return Objects.equals(id, other.id)
                 && stream.equals(other.stream);
     }
+
+    public @NonNull Long getStream() {
+        return stream;
+    }
+
+    public void setStream(@NonNull Long stream) {
+        this.stream = stream;
+    }
+
+    @Override
+    public String toString() {
+        return "Stream_group{" +
+                "id=" + id +
+                ", stream=" + stream +
+                '}';
+    }
 }

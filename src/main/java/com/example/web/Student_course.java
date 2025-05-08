@@ -41,4 +41,29 @@ public class Student_course implements CommonEntity<Long> {
                 && student_id.equals(other.student_id)
                 && course_id.equals(other.course_id);
     }
+
+    public @NonNull Student getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(@NonNull Student student_id) {
+        this.student_id = student_id;
+    }
+
+    public @NonNull Course getCourse_id() {
+        return course_id;
+    }
+
+    public void setCourse_id(@NonNull Course course_id) {
+        this.course_id = course_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Student_course{" +
+                "id=" + id +
+                ", student_id=" + student_id +
+                ", course_id=" + course_id +
+                '}';
+    }
 }

@@ -47,4 +47,47 @@ public class Course implements CommonEntity<Long> {
                 && intensity.equals(other.intensity)
                 && year.equals(other.year);
     }
+
+    public @NonNull String getName() {
+        return name;
+    }
+
+    public void setName(@NonNull String name) {
+        this.name = name;
+    }
+
+    public @NonNull String getCoverage() {
+        return coverage;
+    }
+
+    public void setCoverage(@NonNull String coverage) {
+        this.coverage = coverage;
+    }
+
+    public @NonNull Long getIntensity() {
+        return intensity;
+    }
+
+    public void setIntensity(@NonNull Long intensity) {
+        this.intensity = intensity;
+    }
+
+    public @NonNull Long getYear() {
+        return year;
+    }
+
+    public void setYear(@NonNull Long year) {
+        this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", coverage='" + coverage + '\'' +
+                ", intensity=" + intensity +
+                ", year=" + year +
+                '}';
+    }
 }

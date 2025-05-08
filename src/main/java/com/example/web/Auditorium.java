@@ -37,4 +37,29 @@ public class Auditorium implements CommonEntity<Long> {
                 && number.equals(other.number)
                 && capacity.equals(other.capacity);
     }
+
+    public @NonNull Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(@NonNull Integer number) {
+        this.number = number;
+    }
+
+    public @NonNull Integer getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(@NonNull Integer capacity) {
+        this.capacity = capacity;
+    }
+
+    @Override
+    public String toString() {
+        return "Auditorium{" +
+                "id=" + id +
+                ", number=" + number +
+                ", capacity=" + capacity +
+                '}';
+    }
 }
