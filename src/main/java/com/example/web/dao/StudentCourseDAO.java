@@ -24,5 +24,4 @@ public class StudentCourseDAO {
         int deletedCount = studentCourseRepository.deleteRelation(studentId);
         return deletedCount > 0;
     }
-
 }

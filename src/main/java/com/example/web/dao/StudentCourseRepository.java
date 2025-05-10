@@ -11,10 +11,10 @@ import java.util.List;
 @Repository
 public interface StudentCourseRepository extends JpaRepository<Student_course, Long> {
 
-    @Query("SELECT sc FROM Student_course sc WHERE sc.student_id = :studentId")
+    @Query("SELECT sc FROM Student_course sc WHERE sc.student_id.id = :studentId")
     List<Student_course> findByStudent_id(Long studentId);
 
     @Modifying
-    @Query("DELETE FROM Student_course sc WHERE sc.student_id = :studentId")
+    @Query("DELETE FROM Student_course sc WHERE sc.student_id.id = :studentId")
     int deleteRelation(Long studentId);
 }

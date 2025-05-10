@@ -2,6 +2,7 @@ package com.example.web.dao;
 
 import com.example.web.Student;
 import com.example.web.Student_course;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,6 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
+@Transactional
 @TestPropertySource(locations = "classpath:application.properties")
 public class studentCourseDAOTest {
 
@@ -21,27 +23,18 @@ public class studentCourseDAOTest {
 
     @Test
     void testFindByStudent_Id() {
-        Student student = new Student();
-        student.setId(1L);
-
-        List<Student_course> relations = studentCourseDAO.getCoursesByStudentId(student.getId());
+        List<Student_course> relations = studentCourseDAO.getCoursesByStudentId(1L);
         assertThat(relations).isNotEmpty();
     }
 
     @Test
     void testFindByNonExistentTeacher_Id() {
-        Student student = new Student();
-        student.setId(999L);
-
-        List<Student_course> relations = studentCourseDAO.getCoursesByStudentId(student.getId());
+        List<Student_course> relations = studentCourseDAO.getCoursesByStudentId(999L);
         assertThat(relations).isEmpty();
     }
 
-
     @Test
     void testDeleteStudentCourseRelation() {
-        Student student = new Student();
-        student.setId(1L);
-        assertTrue(studentCourseDAO.deleteStudentCourseRelation(student.getId()));
+        assertTrue(studentCourseDAO.deleteStudentCourseRelation(1L));
     }
 }
