@@ -1,7 +1,6 @@
 package com.example.web.dao;
 
-import com.example.web.dao.CourseRepository;
-import com.example.web.Course;
+import com.example.web.entities.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

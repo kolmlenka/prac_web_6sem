@@ -1,7 +1,6 @@
 package com.example.web.dao;
 
-import com.example.web.Student;
-import com.example.web.Student_course;
+import com.example.web.entities.Student_course;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class studentCourseDAOTest {
 
     @Test
     void testFindByStudent_Id() {
-        List<Student_course> relations = studentCourseDAO.getCoursesByStudentId(1L);
+        List<Student_course> relations = studentCourseDAO.getCoursesByStudentId(3L);
         assertThat(relations).isNotEmpty();
     }
 
@@ -35,6 +34,6 @@ public class studentCourseDAOTest {
 
     @Test
     void testDeleteStudentCourseRelation() {
-        assertTrue(studentCourseDAO.deleteStudentCourseRelation(1L));
+        assertTrue(studentCourseDAO.deleteStudentCourseRelation(2L));
     }
 }

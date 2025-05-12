@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
-import com.example.web.Teacher_course;
+import com.example.web.entities.Teacher_course;
 
 import java.util.List;
 

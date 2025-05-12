@@ -1,6 +1,6 @@
 package com.example.web.dao;
 
-import com.example.web.Teacher;
+import com.example.web.entities.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

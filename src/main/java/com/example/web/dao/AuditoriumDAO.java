@@ -1,7 +1,6 @@
 package com.example.web.dao;
 
-import com.example.web.dao.AuditoriumRepository;
-import com.example.web.Auditorium;
+import com.example.web.entities.Auditorium;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,8 +17,8 @@ public class AuditoriumDAO {
         this.auditoriumRepository = auditoriumRepository;
     }
 
-    public List<Auditorium> getAllAuditoriums() {
-        return auditoriumRepository.findAll();
+    public List<Integer> getAllAuditoriums() {
+        return auditoriumRepository.findAllAuditoriumNumbers();
     }
 
     public Optional<Auditorium> getAuditoriumById(Long id) {

@@ -1,7 +1,6 @@
 package com.example.web.dao;
 
-import com.example.web.dao.StreamGroupRepository;
-import com.example.web.Stream_group;
+import com.example.web.entities.Stream_group;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,7 +25,7 @@ public class StreamGroupDAO {
         return streamGroupRepository.findGroupByStream(Num);
     }
 
-    public Optional<Stream_group> getStreamByGroupNum(Long id) {
+    public Optional<Long> getStreamByGroupNum(Long id) {
         return streamGroupRepository.findStreamByGroup(id);
     }
 }

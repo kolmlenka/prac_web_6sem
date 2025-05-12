@@ -1,6 +1,6 @@
 package com.example.web.dao;
 
-import com.example.web.Course;
+import com.example.web.entities.Course;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

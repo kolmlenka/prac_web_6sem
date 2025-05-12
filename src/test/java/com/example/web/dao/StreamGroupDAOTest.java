@@ -1,6 +1,6 @@
 package com.example.web.dao;
 
-import com.example.web.Stream_group;
+import com.example.web.entities.Stream_group;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -35,14 +35,14 @@ public class StreamGroupDAOTest {
     @Test
     void testFindStreamByGroup() {
         Long stream = 211L;
-        Optional<Stream_group> ans = streamGroupDAO.getStreamByGroupNum(stream);
+        Optional<Long> ans = streamGroupDAO.getStreamByGroupNum(stream);
         assertThat(ans).isPresent();
     }
 
     @Test
     void testFindStreamByNonExistingGroup() {
         Long stream = 777L;
-        Optional<Stream_group> ans = streamGroupDAO.getStreamByGroupNum(stream);
+        Optional<Long> ans = streamGroupDAO.getStreamByGroupNum(stream);
         assertThat(ans).isEmpty();
     }
 

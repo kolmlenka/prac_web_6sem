@@ -1,6 +1,6 @@
 package com.example.web.dao;
 
-import com.example.web.Student_course;
+import com.example.web.entities.Student_course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

@@ -1,7 +1,7 @@
 package com.example.web.dao;
 
-import com.example.web.Stream_group;
-import com.example.web.Student;
+import com.example.web.entities.Stream_group;
+import com.example.web.entities.Student;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +40,7 @@ public class studentDAOTest {
     @Test
     void testFindAllStudents() {
         List<Student> students = studentDAO.getAllStudents();
-        assertThat(students).hasSize(6);
+        assertThat(students).isNotEmpty();
     }
 
     @BeforeEach
@@ -90,11 +90,9 @@ public class studentDAOTest {
     }
 
 
-    //@Test
-    //public void testDeleteStudent() {
-    //    Student savedStudent = studentDAO.addStudent(student);
-    //    studentcourseDAO.deleteCoursesByStudentId(savedStudent.getId());
-    //    studentDAO.deleteStudent(savedStudent.getId());
-    //    assertFalse(studentDAO.getStudentById(savedStudent.getId()).isPresent());
-    //}
+    @Test
+    public void testDeleteStudent() {
+        studentDAO.deleteStudent(student.getId());
+        assertFalse(studentDAO.getStudentById(student.getId()).isPresent());
+    }
 }

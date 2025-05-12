@@ -1,6 +1,6 @@
 package com.example.web.dao;
 
-import com.example.web.Auditorium;
+import com.example.web.entities.Auditorium;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,15 +26,15 @@ public class AuditoriumDAOTest {
     }
 
     @Test
-    void testFindByNonExistingAuditoriumId() {
+    void testGetByNonExistingAuditoriumId() {
         Long auditoriumId = 71L;
         Optional<Auditorium> auditoriums = auditoriumDAO.getAuditoriumById(auditoriumId);
         assertThat(auditoriums).isEmpty();
     }
 
     @Test
-    void testFindAll() {
-        List<Auditorium> auditoriums = auditoriumDAO.getAllAuditoriums();
+    void testGetAll() {
+        List<Integer> auditoriums = auditoriumDAO.getAllAuditoriums();
         assertThat(auditoriums).hasSize(9);
     }
 }

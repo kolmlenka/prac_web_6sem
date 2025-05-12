@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.web.dao.studentDAOTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-05-12T13:47:09.829Z" hostname="kolmlena-NBLK-WAX9X" time="0.292">
+  <properties/>
+  <testcase name="testUpdateStudent()" classname="com.example.web.dao.studentDAOTest" time="0.139"/>
+  <testcase name="testFindByNonExistingStudent_Id()" classname="com.example.web.dao.studentDAOTest" time="0.016"/>
+  <testcase name="testFindAllStudents()" classname="com.example.web.dao.studentDAOTest" time="0.06"/>
+  <testcase name="testAddStudent()" classname="com.example.web.dao.studentDAOTest" time="0.021"/>
+  <testcase name="testDeleteStudent()" classname="com.example.web.dao.studentDAOTest" time="0.028"/>
+  <testcase name="testFindByStudent_Id()" classname="com.example.web.dao.studentDAOTest" time="0.017"/>
+  <system-out><![CDATA[2025-05-12T16:47:09.819+03:00  INFO 11505 --- [web] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.web.dao.studentDAOTest]: studentDAOTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-12T16:47:09.823+03:00  INFO 11505 --- [web] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.web.WebApplication for test class com.example.web.dao.studentDAOTest
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,4 +1,4 @@
-package com.example.web;
+package com.example.web.entities;
 
 public interface CommonEntity<ID> {
     ID getId();

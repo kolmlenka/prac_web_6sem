@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.web.dao.CourseDAOTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-05-12T13:47:09.019Z" hostname="kolmlena-NBLK-WAX9X" time="0.067">
+  <properties/>
+  <testcase name="testFindByCourse_Id()" classname="com.example.web.dao.CourseDAOTest" time="0.022"/>
+  <testcase name="testFindByNonExistingCourse_Id()" classname="com.example.web.dao.CourseDAOTest" time="0.017"/>
+  <testcase name="testFindAll()" classname="com.example.web.dao.CourseDAOTest" time="0.024"/>
+  <system-out><![CDATA[2025-05-12T16:47:09.006+03:00  INFO 11505 --- [web] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.web.dao.CourseDAOTest]: CourseDAOTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-12T16:47:09.010+03:00  INFO 11505 --- [web] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.web.WebApplication for test class com.example.web.dao.CourseDAOTest
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

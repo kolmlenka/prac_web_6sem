@@ -1,8 +1,9 @@
 package com.example.web.dao;
 
-import com.example.web.Student;
+import com.example.web.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,10 +12,12 @@ import java.util.Optional;
 public class StudentDAO {
 
     private final StudentRepository studentRepository;
+    private final StudentCourseRepository studentCourseRepository;
 
     @Autowired
-    public StudentDAO(StudentRepository studentRepository) {
+    public StudentDAO(StudentRepository studentRepository, StudentCourseRepository studentCourseRepository) {
         this.studentRepository = studentRepository;
+        this.studentCourseRepository = studentCourseRepository;
     }
 
     public List<Student> getAllStudents() {
@@ -29,6 +32,7 @@ public class StudentDAO {
         return studentRepository.save(student);
     }
 
+    @Transactional
     public Student updateStudent(Long id, Student studentDetails) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Student not found with id " + id));
@@ -38,8 +42,9 @@ public class StudentDAO {
         return studentRepository.save(student);
     }
 
+    @Transactional
     public void deleteStudent(Long id) {
+        studentCourseRepository.deleteRelation(id);
         studentRepository.deleteById(id);
     }
-
 }

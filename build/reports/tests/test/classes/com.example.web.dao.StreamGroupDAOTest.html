@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.517s</div>
+<div class="counter">0.095s</div>
 <p>duration</p>
 </div>
 </td>
@@ -66,9 +66,6 @@
 <li>
 <a href="#">Standard output</a>
 </li>
-<li>
-<a href="#">Standard error</a>
-</li>
 </ul>
 <div class="tab">
 <h2>Tests</h2>
@@ -82,27 +79,27 @@
 </thead>
 <tr>
 <td class="success">testFindAll()</td>
-<td class="success">1.371s</td>
+<td class="success">0.022s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindGroupByNonExistingStream()</td>
-<td class="success">0.017s</td>
+<td class="success">0.021s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindGroupByStream()</td>
-<td class="success">0.018s</td>
+<td class="success">0.017s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindStreamByGroup()</td>
-<td class="success">0.013s</td>
+<td class="success">0.016s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindStreamByNonExistingGroup()</td>
-<td class="success">0.098s</td>
+<td class="success">0.019s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -110,55 +107,8 @@
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>19:51:30.975 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.web.dao.StreamGroupDAOTest]: StreamGroupDAOTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:51:31.254 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.web.WebApplication for test class com.example.web.dao.StreamGroupDAOTest
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.4.4)
-
-2025-05-10T19:51:32.088+03:00  INFO 137115 --- [web] [    Test worker] com.example.web.dao.StreamGroupDAOTest   : Starting StreamGroupDAOTest using Java 21.0.6 with PID 137115 (started by kolmlena in /home/kolmlena/IdeaProjects/web)
-2025-05-10T19:51:32.092+03:00  INFO 137115 --- [web] [    Test worker] com.example.web.dao.StreamGroupDAOTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2025-05-10T19:51:33.307+03:00  INFO 137115 --- [web] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-10T19:51:33.441+03:00  INFO 137115 --- [web] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 7 JPA repository interfaces.
-2025-05-10T19:51:34.348+03:00  INFO 137115 --- [web] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-10T19:51:34.454+03:00  INFO 137115 --- [web] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
-2025-05-10T19:51:34.522+03:00  INFO 137115 --- [web] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-10T19:51:35.096+03:00  INFO 137115 --- [web] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-10T19:51:35.158+03:00  INFO 137115 --- [web] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-10T19:51:35.982+03:00  INFO 137115 --- [web] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3f45dfec
-2025-05-10T19:51:35.986+03:00  INFO 137115 --- [web] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-10T19:51:36.064+03:00  WARN 137115 --- [web] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-10T19:51:36.104+03:00  INFO 137115 --- [web] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 14.17
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-10T19:51:38.081+03:00  INFO 137115 --- [web] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-10T19:51:38.097+03:00  INFO 137115 --- [web] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-10T19:51:38.536+03:00  INFO 137115 --- [web] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-10T19:51:39.920+03:00  WARN 137115 --- [web] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-10T19:51:40.740+03:00  INFO 137115 --- [web] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2025-05-10T19:51:41.061+03:00  INFO 137115 --- [web] [    Test worker] com.example.web.dao.StreamGroupDAOTest   : Started StreamGroupDAOTest in 9.485 seconds (process running for 11.725)
-</pre>
-</span>
-</div>
-<div class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
-WARNING: A Java agent has been loaded dynamically (/home/kolmlena/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.11/a38b16385e867f59a641330f0362ebe742788ed8/byte-buddy-agent-1.15.11.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
+<pre>2025-05-12T16:47:09.444+03:00  INFO 11505 --- [web] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.web.dao.StreamGroupDAOTest]: StreamGroupDAOTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-12T16:47:09.449+03:00  INFO 11505 --- [web] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.web.WebApplication for test class com.example.web.dao.StreamGroupDAOTest
 </pre>
 </span>
 </div>
@@ -170,7 +120,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.13</a> at 10 мая 2025 г., 19:51:42</p>
+<a href="https://www.gradle.org">Gradle 8.13</a> at 12 мая 2025 г., 16:47:11</p>
 </div>
 </div>
 </body>
