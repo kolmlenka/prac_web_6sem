@@ -52,5 +52,4 @@ public class TeacherController {
         model.addAttribute("selectedTeacherId", teacherId);
         return "teachers";
     }
-
 }
