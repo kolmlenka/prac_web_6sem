@@ -24,11 +24,11 @@ public class TeacherController {
     @Autowired
     private Teacher_courseDAO teacherCourseDAO;
 
-    @GetMapping("/teachers")
+    @GetMapping("/teachers/list")
     public String teacherListPage(Model model) {
         List<Teacher> teachers = teacherDAO.getAllTeachers();
         model.addAttribute("teachers", teachers);
-        return "teachers";
+        return "teachers/list";
     }
 
     @GetMapping("/teachers")
