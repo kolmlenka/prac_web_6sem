@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аудитория</title>
+</head>
+<body>
+<h1>Аудитория</h1>
+
+<div>
+  <p><strong>Номер Аудитории:</strong> <span th:text="${auditorium.number}"></span></p>
+  <p><strong>Вместимость:</strong> <span th:text="${auditorium.capacity}"></span></p>
+</div>
+
+<a href="/auditoriums/list">Назад к списку аудиторий</a>
+</body>
+</html>

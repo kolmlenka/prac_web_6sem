@@ -15,5 +15,5 @@ public interface AuditoriumRepository extends JpaRepository<Auditorium, Long> {
     Optional<Auditorium> findById(Long auditoriumId);
 
     @Query("SELECT a.number FROM Auditorium a")
-    List<Integer> findAllAuditoriumNumbers();
+    List<Auditorium> findAllAuditoriums();
 }

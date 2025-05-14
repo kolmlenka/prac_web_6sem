@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы преподавателя</title>
+</head>
+<body>
+<h1>Курсы преподавателя</h1>
+
+<h2>Преподаватель ID: <span th:text="${selectedTeacherId}"></span></h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID курса</th>
+        <th>Название курса</th>
+        <!-- Добавьте другие поля, если необходимо -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="course : ${teachers}">
+        <td th:text="${course.id}"></td>
+        <td th:text="${course.courseName}"></td> <!-- Предполагается, что у Teacher_course есть поле courseName -->
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/teachers/list}">Вернуться к списку преподавателей</a>
+
+</body>
+</html>

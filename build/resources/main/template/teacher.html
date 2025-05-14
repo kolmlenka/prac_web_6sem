@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Информация о преподавателе</title>
+</head>
+<body>
+<h1>Информация о преподавателе</h1>
+<p><strong>ID:</strong> <span th:text="${teacher.id}"></span></p>
+<p><strong>ФИО:</strong> <span th:text="${teacher.full_name}"></span></p>
+
+<a th:href="@{/teachers/list}">Вернуться к списку преподавателей</a>
+
+</body>
+</html>

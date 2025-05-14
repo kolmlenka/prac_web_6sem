@@ -17,8 +17,8 @@ public class AuditoriumDAO {
         this.auditoriumRepository = auditoriumRepository;
     }
 
-    public List<Integer> getAllAuditoriums() {
-        return auditoriumRepository.findAllAuditoriumNumbers();
+    public List<Auditorium> getAllAuditoriums() {
+        return auditoriumRepository.findAllAuditoriums();
     }
 
     public Optional<Auditorium> getAuditoriumById(Long id) {
