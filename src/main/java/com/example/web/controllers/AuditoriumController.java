@@ -32,6 +32,7 @@ public class AuditoriumController {
 
         if (!auditorium.isPresent()) {
             model.addAttribute("error_msg", "В базе нет аудитории с ID = " + auditoriumId);
+            model.addAttribute("backUrl", "auditoriums/list");
             return "errorPage";
         }
 

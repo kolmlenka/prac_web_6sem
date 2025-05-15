@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Расписание занятий</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px auto;
+      max-width: 900px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #007BFF;
+    }
+    form {
+      margin-bottom: 25px;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: space-between;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+      font-size: 14px;
+      color: #555;
+      width: 180px;
+    }
+    input[type="datetime-local"],
+    input[type="number"] {
+      padding: 6px 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      align-self: flex-end;
+      height: 40px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
+    }
+    th {
+      background-color: #007BFF;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    tr:hover {
+      background-color: #f1faff;
+    }
+    @media (max-width: 600px) {
+      form {
+        flex-direction: column;
+      }
+      label {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>Расписание занятий</h1>
+
+<form action="/lessons/filter" method="get" novalidate>
+  <label>
+    Начало интервала:
+    <input type="datetime-local" name="startTime" required />
+  </label>
+
+  <label>
+    Конец интервала:
+    <input type="datetime-local" name="endTime" required />
+  </label>
+
+  <label>
+    ID преподавателя:
+    <input type="number" name="teacherId" min="1" placeholder="Необязательно" />
+  </label>
+
+  <label>
+    ID аудитории:
+    <input type="number" name="auditoriumId" min="1" placeholder="Необязательно" />
+  </label>
+
+  <button type="submit">Показать расписание</button>
+</form>
+
+<table>
+  <thead>
+  <tr>
+    <th>Курс</th>
+    <th>Преподаватель</th>
+    <th>Аудитория</th>
+    <th>Группа</th>
+    <th>Время занятия</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="lesson : ${lessons}">
+    <td th:text="${lesson.course != null ? lesson.course.name : '—'}">Курс</td>
+    <td th:text="${lesson.teacher != null ? lesson.teacher.fullName : '—'}">Преподаватель</td>
+    <td th:text="${lesson.auditorium != null ? lesson.auditorium.number : '—'}">Аудитория</td>
+    <td th:text="${lesson.streamGroup != null ? lesson.streamGroup.groupId : '—'}">Группа</td>
+    <td th:text="${#dates.format(lesson.time, 'dd.MM.yyyy HH:mm')}">Время занятия</td>
+  </tr>
+  <tr th:if="${#lists.isEmpty(lessons)}">
+    <td colspan="5" style="text-align:center; font-style: italic; color:#777;">Расписание не найдено</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

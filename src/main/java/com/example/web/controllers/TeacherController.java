@@ -37,6 +37,7 @@ public class TeacherController {
 
         if (!teacher.isPresent()) {
             model.addAttribute("error_msg", "В базе нет преподавателя с ID = " + teacherId);
+            model.addAttribute("backUrl", "teachers/list");
             return "errorPage";
         }
 

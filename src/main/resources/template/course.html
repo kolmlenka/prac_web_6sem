@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${course.name}">Курс</title>
+</head>
+<body>
+<h1 th:text="${course.name}">Название курса</h1>
+<p th:text="${course.coverage}">Охват, на какое количество слушателей рассчитан</p>
+<p th:text="${course.intensity}">Занятий в неделю</p>
+<p th:text="${course.year}">Год проведения</p>
+<p>ID курса: <span th:text="${course.id}"></span></p>
+<a href="/courses/list">Назад к списку курсов</a>
+</body>
+</html>
