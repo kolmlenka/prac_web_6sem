@@ -47,4 +47,8 @@ public class StudentDAO {
         studentCourseRepository.deleteRelation(id);
         studentRepository.deleteById(id);
     }
+
+    public List<Student> getStudentsByGroupId(Long groupId) {
+        return studentRepository.findByGroupId(groupId);
+    }
 }

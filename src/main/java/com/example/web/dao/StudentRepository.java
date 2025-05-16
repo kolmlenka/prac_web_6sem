@@ -22,4 +22,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     @Modifying
     @Query("DELETE FROM Student s WHERE s.id = :id")
     void deleteById(Long id);
+
+    @Query("SELECT s FROM Student s WHERE s.group_id = :groupId")
+    List<Student> findByGroupId(Long groupId);
 }

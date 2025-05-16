@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Профиль студента</title>
+</head>
+<body>
+<h1>Профиль студента</h1>
+<p>ID: <span th:text="${student.id}"></span></p>
+<p>ФИО: <span th:text="${student.full_name}"></span></p>
+<p>Группа: <span th:text="${student.group_id}"></span></p>
+<p>Курс: <span th:text="${student.year}"></span></p>
+<a href="/students/list">Назад к списку студентов</a>
+</body>
+</html>
