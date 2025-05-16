@@ -3,37 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Список Аудиторий</title>
+    <title>Список аудиторий</title>
 </head>
 <body>
-<h1>Список Аудиторий</h1>
-
-<table border="1">
+<h1>Список аудиторий</h1>
+<table>
     <thead>
     <tr>
-        <th>Номер Аудитории</th>
-        <th>Вместимость</th>
+        <th>Номер аудитории</th>
+        <th>Вместительность</th>
     </tr>
     </thead>
     <tbody>
-    <th:block th:each="auditorium : ${auditoriums}">
-        <tr>
-            <td th:text="${auditorium.number}"></td>
-            <td th:text="${auditorium.capacity}"></td>
-        </tr>
-    </th:block>
+    <tr th:each="auditorium : ${auditoriums}">
+        <td th:text="${auditorium.number}"></td>
+        <td th:text="${auditorium.capacity}"></td>
+        <td>
+            <a th:href="@{/auditorium(auditoriumId=${auditorium.id})}">Просмотреть</a>
+        </td>
+    </tr>
     </tbody>
 </table>
-
-<h2>Поиск свободных аудиторий</h2>
-<form action="/auditoriums/search" method="get">
-    <label for="date">Дата:</label>
-    <input type="date" id="date" name="date" required>
-
-    <label for="time">Время:</label>
-    <input type="time" id="time" name="time" required>
-
-    <button type="submit">Найти свободные аудитории</button>
-</form>
 </body>
 </html>

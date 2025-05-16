@@ -122,17 +122,15 @@
     <th>Курс</th>
     <th>Преподаватель</th>
     <th>Аудитория</th>
-    <th>Группа</th>
     <th>Время занятия</th>
   </tr>
   </thead>
   <tbody>
   <tr th:each="lesson : ${lessons}">
-    <td th:text="${lesson.course != null ? lesson.course.name : '—'}">Курс</td>
-    <td th:text="${lesson.teacher != null ? lesson.teacher.fullName : '—'}">Преподаватель</td>
-    <td th:text="${lesson.auditorium != null ? lesson.auditorium.number : '—'}">Аудитория</td>
-    <td th:text="${lesson.streamGroup != null ? lesson.streamGroup.groupId : '—'}">Группа</td>
-    <td th:text="${#dates.format(lesson.time, 'dd.MM.yyyy HH:mm')}">Время занятия</td>
+    <td th:text="${lesson.course}"></td>
+    <td th:text="${lesson.teacher}"></td>
+    <td th:text="${lesson.auditorium}"></td>
+    <td th:text="${lesson.time}"></td>
   </tr>
   <tr th:if="${#lists.isEmpty(lessons)}">
     <td colspan="5" style="text-align:center; font-style: italic; color:#777;">Расписание не найдено</td>

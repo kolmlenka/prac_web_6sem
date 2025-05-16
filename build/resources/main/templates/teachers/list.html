@@ -11,8 +11,7 @@
   <thead>
   <tr>
     <th>ID</th>
-    <th>Имя</th>
-    <th>Фамилия</th>
+    <th>ФИО</th>
     <th>Действия</th>
   </tr>
   </thead>
@@ -22,7 +21,7 @@
     <td th:text="${teacher.full_name}"></td>
     <td>
       <a th:href="@{/teachers(teacherId=${teacher.id})}">Просмотреть</a>
-      <a th:href="@{/teachers/filter(teacherId=${teacher.id})}">Фильтровать курсы</a>
+      <a th:href="@{/teachers/filter(teacherId=${teacher.id})}">Проводимые курсы</a>
     </td>
   </tr>
   </tbody>

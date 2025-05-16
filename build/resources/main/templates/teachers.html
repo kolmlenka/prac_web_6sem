@@ -13,15 +13,14 @@
 <table>
     <thead>
     <tr>
-        <th>ID курса</th>
-        <th>Название курса</th>
-        <!-- Добавьте другие поля, если необходимо -->
+        <th>Список курсов</th>
+        <th>Год проведения</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="course : ${teachers}">
-        <td th:text="${course.id}"></td>
-        <td th:text="${course.courseName}"></td> <!-- Предполагается, что у Teacher_course есть поле courseName -->
+        <td th:text="${course.course_id}"></td>
+        <td th:text="${course.year_of_course}"></td>
     </tr>
     </tbody>
 </table>

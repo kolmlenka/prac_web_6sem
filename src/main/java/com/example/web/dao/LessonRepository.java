@@ -19,7 +19,7 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
     @Query("SELECT l FROM Lesson l")
     List<Lesson> findAllLessons();
 
-    @Query(value = "SELECT a.auditorium_id, a.aud_number, a.capacity " +
+    @Query(value = "SELECT a " +
             "FROM auditoriums a " +
             "WHERE NOT EXISTS (" +
             "    SELECT 1 " +

@@ -7,10 +7,11 @@
 </head>
 <body>
 <h1 th:text="${course.name}">Название курса</h1>
-<p th:text="${course.coverage}">Охват, на какое количество слушателей рассчитан</p>
-<p th:text="${course.intensity}">Занятий в неделю</p>
-<p th:text="${course.year}">Год проведения</p>
-<p>ID курса: <span th:text="${course.id}"></span></p>
+
+<p><strong>Охват:</strong> <span th:text="${course.coverage}">Охват, на какое количество слушателей рассчитан</span></p>
+<p><strong>Занятий в неделю:</strong> <span th:text="${course.intensity}">Занятий в неделю</span></p>
+<p><strong>Год проведения:</strong> <span th:text="${course.year}">Год проведения</span></p>
+
 <a href="/courses/list">Назад к списку курсов</a>
 </body>
 </html>
