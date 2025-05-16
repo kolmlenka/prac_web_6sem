@@ -21,7 +21,7 @@
   <tr th:each="student : ${students}">
     <td th:text="${student.id}"></td>
     <td th:text="${student.full_name}"></td>
-    <td th:text="${student.group_id}"></td>
+    <td th:text="${student.group}"></td>
     <td th:text="${student.year}"></td>
     <td>
       <a th:href="@{/students/profile(studentId=${student.id})}">Профиль</a>

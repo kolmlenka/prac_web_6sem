@@ -33,7 +33,7 @@ public class StudentController {
     @PostMapping("/students/add")
     public String addStudent(@ModelAttribute Student student) {
         studentDAO.addStudent(student);
-        return "redirect:/students/list";
+        return "/students/list";
     }
 
     @GetMapping("/students/edit")
@@ -51,7 +51,7 @@ public class StudentController {
     @PostMapping("/students/edit")
     public String editStudent(@ModelAttribute Student student) {
         studentDAO.updateStudent(student.getId(), student);
-        return "redirect:/students/list";
+        return "/students/list";
     }
 
     @GetMapping("/students/delete")
@@ -63,7 +63,7 @@ public class StudentController {
             return "errorPage";
         }
         studentDAO.deleteStudent(studentId);
-        return "redirect:/students/list";
+        return "/students/list";
     }
 
     @GetMapping("/students/profile")

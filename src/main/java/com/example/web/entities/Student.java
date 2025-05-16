@@ -23,7 +23,7 @@ public class Student implements CommonEntity<Long> {
     @JoinColumn(name = "group_id")
     @ToString.Exclude
     @NonNull
-    private Stream_group group_id;
+    private Stream_group group;
 
     @Column(nullable = false, name = "full_name")
     @NonNull

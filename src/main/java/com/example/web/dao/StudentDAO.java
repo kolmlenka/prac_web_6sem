@@ -38,7 +38,7 @@ public class StudentDAO {
                 .orElseThrow(() -> new RuntimeException("Student not found with id " + id));
         student.setFull_name(studentDetails.getFull_name());
         student.setYear(studentDetails.getYear());
-        student.setGroup_id(studentDetails.getGroup_id());
+        student.setGroup(studentDetails.getGroup());
         return studentRepository.save(student);
     }
 

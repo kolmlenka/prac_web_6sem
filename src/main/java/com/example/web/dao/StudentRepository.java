@@ -12,17 +12,10 @@ import java.util.Optional;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
-    Optional<Student> findById(Long studentId);
-
-    List<Student> findAll();
-
-    @Override
-    Student save(Student student);
-
     @Modifying
     @Query("DELETE FROM Student s WHERE s.id = :id")
     void deleteById(Long id);
 
-    @Query("SELECT s FROM Student s WHERE s.group_id = :groupId")
+    @Query("SELECT s FROM Student s WHERE s.group = :groupId")
     List<Student> findByGroupId(Long groupId);
 }
