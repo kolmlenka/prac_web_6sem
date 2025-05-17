@@ -34,7 +34,7 @@ public class AuditoriumDAOTest {
 
     @Test
     void testGetAll() {
-        List<Integer> auditoriums = auditoriumDAO.getAllAuditoriums();
+        List<Auditorium> auditoriums = auditoriumDAO.getAllAuditoriums();
         assertThat(auditoriums).hasSize(9);
     }
 }

@@ -51,7 +51,7 @@ public class studentDAOTest {
         student.setYear(2L);
         Stream_group group = new Stream_group();
         group.setId(101L);
-        student.setGroup_id(group);
+        student.setGroup(group);
     }
 
     @Test
@@ -66,7 +66,7 @@ public class studentDAOTest {
         assertEquals("Иван Иванов", result.getFull_name());
         assertEquals(2L, result.getYear());
 
-        assertEquals(expectedGroup.getId(), result.getGroup_id().getId());
+        assertEquals(expectedGroup.getId(), result.getGroup().getId());
     }
 
     @Test
@@ -79,14 +79,14 @@ public class studentDAOTest {
         Student updatedStudent = new Student();
         updatedStudent.setFull_name("Иван Иванов");
         updatedStudent.setYear(3L);
-        updatedStudent.setGroup_id(updatedGroup);
+        updatedStudent.setGroup(updatedGroup);
         Student result = studentDAO.updateStudent(savedStudent.getId(), updatedStudent);
 
         assertNotNull(result);
         assertEquals(savedStudent.getId(), result.getId());
         assertEquals("Иван Иванов", result.getFull_name());
         assertEquals(3L, result.getYear());
-        assertEquals(updatedGroup.getId(), result.getGroup_id().getId());
+        assertEquals(updatedGroup.getId(), result.getGroup().getId());
     }
 
 
