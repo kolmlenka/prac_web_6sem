@@ -1,4 +1,4 @@
-package com.example.web;
+package com.example.web.controllers;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
