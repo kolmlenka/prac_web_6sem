@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CourseControllerSystemTest {
 
@@ -17,6 +18,7 @@ public class CourseControllerSystemTest {
 
     private final String courseslistTitle = "Список курсов";
     private final String courseTitle = "Основы кибернетики";
+    private final String errorPageTitle = "Ошибка";
 
 
     @BeforeAll
@@ -55,6 +57,18 @@ public class CourseControllerSystemTest {
         driver.get(BASE_URL + "/course?courseId=7");
 
         assertEquals(courseTitle, driver.getTitle());
+
+        driver.quit();
+    }
+
+    @Test
+    void CourseNotFound() {
+        WebDriver driver = new ChromeDriver();
+        login(driver);
+        driver.get(BASE_URL + "/course?courseId=777");
+
+        assertEquals(errorPageTitle, driver.getTitle());
+        assertTrue(driver.getPageSource().contains("В базе нет курса с ID = 777"));
 
         driver.quit();
     }

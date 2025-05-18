@@ -49,6 +49,11 @@ public class TeacherController {
     @GetMapping("/teachers/filter")
     public String filterTeachersByCourse(@RequestParam(name = "teacherId") Long teacherId, Model model) {
         List<Teacher_course> courses = teacherCourseDAO.getCoursesByTeacherId(teacherId);
+        if (courses.isEmpty()) {
+            model.addAttribute("error_msg", "Курсы не найдены для преподавателя с ID = " + teacherId);
+            model.addAttribute("backUrl", "teachers/list");
+            return "errorPage";
+        }
         model.addAttribute("teachers", courses);
         model.addAttribute("selectedTeacherId", teacherId);
         return "teachers";

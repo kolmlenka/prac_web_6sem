@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AuditoriumControllerSystemTest {
 
@@ -17,7 +18,7 @@ public class AuditoriumControllerSystemTest {
 
     private final String auditoriumslistTitle = "Список аудиторий";
     private final String auditoriumTitle = "Аудитория";
-
+    private final String errorPageTitle = "Ошибка";
 
     @BeforeAll
     static void setUp() {
@@ -55,6 +56,18 @@ public class AuditoriumControllerSystemTest {
         driver.get(BASE_URL + "/auditorium?auditoriumId=1");
 
         assertEquals(auditoriumTitle, driver.getTitle());
+
+        driver.quit();
+    }
+
+    @Test
+    void AuditoriumPageNotFound() {
+        WebDriver driver = new ChromeDriver();
+        login(driver);
+        driver.get(BASE_URL + "/auditorium?auditoriumId=999");
+
+        assertEquals(errorPageTitle, driver.getTitle());
+        assertTrue(driver.getPageSource().contains("В базе нет аудитории с ID = 999"));
 
         driver.quit();
     }

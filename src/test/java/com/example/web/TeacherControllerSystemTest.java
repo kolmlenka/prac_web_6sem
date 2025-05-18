@@ -6,7 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TeacherControllerSystemTest {
 
@@ -17,7 +21,8 @@ public class TeacherControllerSystemTest {
 
     private final String teacherslistTitle = "Список преподавателей";
     private final String teacherTitle = "Информация о преподавателе";
-
+    private final String teachercoursesTitle = "Курсы преподавателя";
+    private final String errorPageTitle = "Ошибка";
 
     @BeforeAll
     static void setUp() {
@@ -58,4 +63,41 @@ public class TeacherControllerSystemTest {
 
         driver.quit();
     }
+
+    @Test
+    void TeacherNotFoundPage() {
+        WebDriver driver = new ChromeDriver();
+        login(driver);
+        driver.get(BASE_URL + "/teachers?teacherId=999");
+
+        assertEquals(errorPageTitle, driver.getTitle());
+        assertTrue(driver.getPageSource().contains("В базе нет преподавателя с ID = 999"));
+
+        driver.quit();
+    }
+
+    @Test
+    void FilterTeachersByCourse() {
+        WebDriver driver = new ChromeDriver();
+        login(driver);
+        driver.get(BASE_URL + "/teachers/filter?teacherId=1");
+
+        assertEquals(teachercoursesTitle, driver.getTitle());
+        assertTrue(driver.getPageSource().contains("Course(id=1, name=Операционные системы, coverage=100, intensity=4, year=2)"));
+
+        driver.quit();
+    }
+
+    @Test
+    void FilterTeachersByCourseEmpty() {
+        WebDriver driver = new ChromeDriver();
+        login(driver);
+        driver.get(BASE_URL + "/teachers/filter?teacherId=999");
+
+        List<WebElement> courseElements = driver.findElements(By.cssSelector(".course-entry"));
+        assertEquals(0, courseElements.size(), "Expected no courses for teacherId=999");
+
+        driver.quit();
+    }
+
 }
